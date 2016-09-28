@@ -25,22 +25,22 @@ or Maven:
 
 Usage
 --------
-mDragListView.setDragListAdapter(new MyAdapter(this, mDatas));
 ```groovy
-        //设置点击item哪个部位可触发拖拽（可不设置，默认是item任意位置长按可拖拽）
-        mDragListView.setDragger(R.id.iv_move);
-        //设置item悬浮背景色
-        mDragListView.setItemFloatColor("#A35151");
-        //设置item悬浮透明度
-        mDragListView.setItemFloatAlpha(0.65f);
-        //设置拖拽响应回调
-        mDragListView.setMyDragListener(new DragListView.MyDragListener() {
-            @Override
-            public void onDragFinish(int srcPositon, int finalPosition) {
-                Toast.makeText(MainActivity.this, "beginPosition : " + srcPositon + "...endPosition : " + finalPosition, Toast.LENGTH_LONG).show();
-            }
-        });
-
+mDragListView.setDragListAdapter(new MyAdapter(this, mDatas));
+//设置点击item哪个部位可触发拖拽（可不设置，默认是item任意位置长按可拖拽）
+mDragListView.setDragger(R.id.iv_move);
+//设置item悬浮背景色
+mDragListView.setItemFloatColor("#A35151");
+//设置item悬浮透明度
+mDragListView.setItemFloatAlpha(0.65f);
+//设置拖拽响应回调
+mDragListView.setMyDragListener(new DragListView.MyDragListener() {
+    @Override
+    public void onDragFinish(int srcPositon, int finalPosition) {
+          Toast.makeText(MainActivity.this, "beginPosition : " + srcPositon + "...endPosition : " + finalPosition, Toast.LENGTH_LONG).show();
+    }
+});
+```
 ProGuard
 --------
 
