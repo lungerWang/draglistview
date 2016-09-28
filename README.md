@@ -54,7 +54,7 @@ If you are using ProGuard you might need to add the following option:
 License
 --------
 
-    Copyright 2013 Square, Inc.
+    Copyright 2016 Lunger Personal
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -67,8 +67,3 @@ License
     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
     See the License for the specific language governing permissions and
     limitations under the License.
-
-
- [1]: http://square.github.io/picasso/
- [2]: https://search.maven.org/remote_content?g=com.squareup.picasso&a=picasso&v=LATEST
- [snap]: https://oss.sonatype.org/content/repositories/snapshots/
