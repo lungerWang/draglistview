@@ -10,21 +10,36 @@ Download
 
 Download via Gradle:
 ```groovy
-compile 'com.lunger.draglistview:draglistview:2.1.0'
+compile 'com.lunger.draglistview:draglistview:2.2.0'
 ```
 or Maven:
 ```xml
 <dependency>
   <groupId>com.lunger.draglistview</groupId>
   <artifactId>draglistview</artifactId>
-  <version>2.1.0</version>
+  <version>2.2.0</version>
   <type>pom</type>
 </dependency>
 ```
 
 
-
-
+Usage
+--------
+mDragListView.setDragListAdapter(new MyAdapter(this, mDatas));
+```groovy
+        //设置点击item哪个部位可触发拖拽（可不设置，默认是item任意位置长按可拖拽）
+        mDragListView.setDragger(R.id.iv_move);
+        //设置item悬浮背景色
+        mDragListView.setItemFloatColor("#A35151");
+        //设置item悬浮透明度
+        mDragListView.setItemFloatAlpha(0.65f);
+        //设置拖拽响应回调
+        mDragListView.setMyDragListener(new DragListView.MyDragListener() {
+            @Override
+            public void onDragFinish(int srcPositon, int finalPosition) {
+                Toast.makeText(MainActivity.this, "beginPosition : " + srcPositon + "...endPosition : " + finalPosition, Toast.LENGTH_LONG).show();
+            }
+        });
 
 ProGuard
 --------

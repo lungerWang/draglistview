@@ -19,7 +19,7 @@ import java.util.ArrayList;
  */
 public class MainActivity extends AppCompatActivity {
 
-    private DragListView mLv;
+    private DragListView mDragListView;
     private ArrayList<String> mDatas;
 
     @Override
@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void findView() {
-        mLv = (DragListView) findViewById(R.id.lv);
+        mDragListView = (DragListView) findViewById(R.id.lv);
     }
 
     private void initData() {
@@ -43,20 +43,20 @@ public class MainActivity extends AppCompatActivity {
         }
     }
     private void initDragListView() {
-        mLv.setDragListAdapter(new MyAdapter(this, mDatas));
+        mDragListView.setDragListAdapter(new MyAdapter(this, mDatas));
+        //设置点击item哪个部位可触发拖拽（可不设置，默认是item任意位置长按可拖拽）
+        mDragListView.setDragger(R.id.iv_move);
+        //设置item悬浮背景色
+        mDragListView.setItemFloatColor("#A35151");
+        //设置item悬浮透明度
+        mDragListView.setItemFloatAlpha(0.65f);
         //设置拖拽响应回调
-        mLv.setMyDragListener(new DragListView.MyDragListener() {
+        mDragListView.setMyDragListener(new DragListView.MyDragListener() {
             @Override
             public void onDragFinish(int srcPositon, int finalPosition) {
                 Toast.makeText(MainActivity.this, "beginPosition : " + srcPositon + "...endPosition : " + finalPosition, Toast.LENGTH_LONG).show();
             }
         });
-        //设置点击item哪个部位可触发拖拽（可不设置，默认是item任意位置长按可拖拽）
-        mLv.setDragger(R.id.iv_move);
-        //设置item悬浮背景色
-        mLv.setItemFloatColor("#A35151");
-        //设置item悬浮透明度
-        mLv.setItemFloatAlpha(0.65f);
     }
 
     class MyAdapter extends DragListAdapter {
