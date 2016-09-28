@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="300px"
+        android:layout_height="100px"
+        android:layout_centerVertical="true"
+        android:gravity="center"
+        android:text="Your infomation"
+        android:textSize="25px"/>
+
+    <ImageView
+        android:id="@+id/iv_move"
+        android:layout_width="53px"
+        android:layout_height="75px"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="20px"
+        android:src="@mipmap/ic_launcher"/>
+
+</RelativeLayout>
