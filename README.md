@@ -2,7 +2,7 @@ DragListView
 =======  
 A dragable ListView for Android, used for reorder your datas.   
 <br>
-![image](https://raw.githubusercontent.com/lungerWang/BiDirTable/master/DifDirTable.gif)  
+![image](https://raw.githubusercontent.com/lungerWang/draglistview/master/DragListView.gif)  
 
 
 Download
