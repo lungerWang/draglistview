@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">DragListView-master</string>
+    <string name="float_color">#A35151</string>
 </resources>

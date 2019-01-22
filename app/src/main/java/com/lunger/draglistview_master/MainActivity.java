@@ -15,12 +15,12 @@ import com.lunger.draglistview.DragListView;
 import java.util.ArrayList;
 
 /**
- * Created by Lunger on 8/17 2016 11:21
+ * Created by Allen on 8/17 2016 11:21
  */
 public class MainActivity extends AppCompatActivity {
 
     private DragListView mDragListView;
-    private ArrayList<String> mDatas;
+    private ArrayList<String> mDataList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +29,6 @@ public class MainActivity extends AppCompatActivity {
         findView();
         initData();
         initDragListView();
-
     }
 
     private void findView() {
@@ -37,24 +36,26 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initData() {
-        mDatas = new ArrayList<>();
+        mDataList = new ArrayList<>();
         for (int i = 0; i < 50; i++) {
-            mDatas.add("Category" + i);
+            mDataList.add("Category" + i);
         }
     }
     private void initDragListView() {
-        mDragListView.setDragListAdapter(new MyAdapter(this, mDatas));
+        mDragListView.setDragListAdapter(new MyAdapter(this, mDataList));
         //设置点击item哪个部位可触发拖拽（可不设置，默认是item任意位置长按可拖拽）
         mDragListView.setDragger(R.id.iv_move);
         //设置item悬浮背景色
-        mDragListView.setItemFloatColor("#A35151");
+        mDragListView.setItemFloatColor(getString(R.string.float_color));
         //设置item悬浮透明度
         mDragListView.setItemFloatAlpha(0.65f);
         //设置拖拽响应回调
         mDragListView.setMyDragListener(new DragListView.MyDragListener() {
             @Override
             public void onDragFinish(int srcPositon, int finalPosition) {
-                Toast.makeText(MainActivity.this, "beginPosition : " + srcPositon + "...endPosition : " + finalPosition, Toast.LENGTH_LONG).show();
+                Toast.makeText(MainActivity.this,
+                        "beginPosition : " + srcPositon + "...endPosition : " + finalPosition,
+                        Toast.LENGTH_LONG).show();
             }
         });
     }
@@ -75,20 +76,19 @@ public class MainActivity extends AppCompatActivity {
             view = LayoutInflater.from(MainActivity.this).inflate(
                     R.layout.drag_list_item, null);
 
-            TextView textView = (TextView) view
-                    .findViewById(R.id.tv_name);
-            textView.setText(mDatas.get(position));
+            TextView textView = (TextView) view.findViewById(R.id.tv_name);
+            textView.setText(mDataList.get(position));
             return view;
         }
 
         @Override
         public int getCount() {
-            return mDatas.size();
+            return mDataList.size();
         }
 
         @Override
         public Object getItem(int position) {
-            return mDatas.get(position);
+            return mDataList.get(position);
         }
 
         @Override
